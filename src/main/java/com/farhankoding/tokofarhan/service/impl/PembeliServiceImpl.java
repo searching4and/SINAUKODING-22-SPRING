@@ -1,8 +1,11 @@
 package com.farhankoding.tokofarhan.service.impl;
 
 import com.farhankoding.tokofarhan.entity.Pembeli;
+import com.farhankoding.tokofarhan.entity.Supplier;
 import com.farhankoding.tokofarhan.entity.dto.PembeliDTO;
+import com.farhankoding.tokofarhan.entity.dto.SupplierDTO;
 import com.farhankoding.tokofarhan.entity.mapping.PembeliMapping;
+import com.farhankoding.tokofarhan.entity.mapping.SupplierMapping;
 import com.farhankoding.tokofarhan.repository.PembeliRepository;
 import com.farhankoding.tokofarhan.service.PembeliService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +36,9 @@ public class PembeliServiceImpl implements PembeliService {
         Pembeli data = repository.findById(id).orElse(null);
 
         if (data != null){
-            data.setNama_pembeli(param.getNama_pembeli()== null ? data.getNama_pembeli() : param.getNama_pembeli());
-            data.setJenis_kelamin(param.getJenis_kelamin()== null ? data.getJenis_kelamin() : param.getJenis_kelamin());
-            data.setNo_telp(param.getNo_telp()== null ? data.getNo_telp() : param.getNo_telp());
+            data.setNamaPembeli(param.getNamaPembeli()== null ? data.getNamaPembeli() : param.getNamaPembeli());
+            data.setJenisKelamin(param.getJenisKelamin()== null ? data.getJenisKelamin() : param.getJenisKelamin());
+            data.setNoTelp(param.getNoTelp()== null ? data.getNoTelp() : param.getNoTelp());
             data.setAlamat(param.getAlamat()== null ? data.getAlamat() : param.getAlamat());
 
             return  PembeliMapping.instance.toDto(repository.save(data));

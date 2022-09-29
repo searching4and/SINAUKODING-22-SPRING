@@ -1,18 +1,20 @@
 package com.farhankoding.tokofarhan.entity.dto;
 
+import com.farhankoding.tokofarhan.entity.mapping.PembeliMapping;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class PembeliDTO {
+    public static PembeliMapping instance;
     private Long id;
 
-    private String nama_pembeli;
+    private String namaPembeli;
 
-    private String jenis_kelamin;
+    private String jenisKelamin;
 
-    private String no_telp;
+    private String noTelp;
 
     private String alamat;
 }

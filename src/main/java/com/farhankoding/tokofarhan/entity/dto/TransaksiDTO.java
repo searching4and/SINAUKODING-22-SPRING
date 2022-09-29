@@ -4,17 +4,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
-public class BarangDTO {
+public class TransaksiDTO {
     private Long id;
 
-    private String namaBarang;
+    private Date tanggal;
 
-    private Double harga;
-
-    private Integer stok;
+    private String keterangan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private SupplierDTO supplier;
+    private BarangDTO barang;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private PembeliDTO pembeli;
 }

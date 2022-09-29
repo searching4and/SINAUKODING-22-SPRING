@@ -11,9 +11,9 @@ public class SupplierDTO {
     public static SupplierMapping instance;
     private Long id;
 
-    private String nama_supplier;
+    private String namaSupplier;
 
-    private String no_telp;
+    private String noTelp;
 
     private String alamat;
 }

@@ -1,9 +1,6 @@
 package com.farhankoding.tokofarhan.entity.mapping;
 
-
-import com.farhankoding.tokofarhan.entity.Pembeli;
 import com.farhankoding.tokofarhan.entity.Supplier;
-import com.farhankoding.tokofarhan.entity.dto.PembeliDTO;
 import com.farhankoding.tokofarhan.entity.dto.SupplierDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -18,5 +15,5 @@ public interface SupplierMapping {
 
     SupplierDTO toDto(Supplier param);
 
-    List<SupplierDTO> toListDto   (List<Supplier> pembeliList);
+    List<SupplierDTO> toListDto   (List<Supplier> supplierList);
 }
