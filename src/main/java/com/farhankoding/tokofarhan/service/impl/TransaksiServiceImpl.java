@@ -52,12 +52,14 @@ public class TransaksiServiceImpl implements TransaksiService {
         return TransaksiMapping.instance.toDto(data);
     }
 
+    @Transactional
     @Override
     public List<TransaksiDTO> findAllData()
     {
         return TransaksiMapping.instance.toListDto(repository.findAll());
 
     }
+    @Transactional
     @Override
     public TransaksiDTO update(TransaksiDTO param, Long id) {
         Transaksi data = repository.findById(id).orElse(null);

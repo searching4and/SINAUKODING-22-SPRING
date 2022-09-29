@@ -40,13 +40,14 @@ public class BarangServiceImpl implements BarangService {
 
         return BarangMapping.instance.toDto(data);
     }
-
+    @Transactional
     @Override
     public List<BarangDTO> findAllData()
     {
         return BarangMapping.instance.toListDto(repository.findAll());
 
     }
+    @Transactional
     @Override
     public BarangDTO update(BarangDTO param, Long id) {
         Barang data = repository.findById(id).orElse(null);

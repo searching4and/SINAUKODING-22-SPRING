@@ -8,6 +8,7 @@ import com.farhankoding.tokofarhan.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -15,17 +16,20 @@ public class SupplierServiceImpl implements SupplierService {
     @Autowired
     private SupplierRepository repository;
 
+    @Transactional
     @Override
     public SupplierDTO save(SupplierDTO param) {
         Supplier data = repository.save(SupplierMapping.instance.toEntity(param));
         return SupplierMapping.instance.toDto(data);
     }
 
+    @Transactional
     @Override
     public List<SupplierDTO> findAllData() {
         return SupplierMapping.instance.toListDto(repository.findAll());
     }
 
+    @Transactional
     @Override
     public SupplierDTO update(SupplierDTO param, Long id) {
         Supplier data = repository.findById(id).orElse(null);

@@ -11,6 +11,7 @@ import com.farhankoding.tokofarhan.service.PembeliService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -19,18 +20,21 @@ public class PembeliServiceImpl implements PembeliService {
     @Autowired
     private PembeliRepository repository;
 
+    @Transactional
     @Override
     public PembeliDTO save(PembeliDTO param) {
         Pembeli data = repository.save(PembeliMapping.instance.toEntity(param));
         return PembeliMapping.instance.toDto(data);
     }
 
+    @Transactional
     @Override
     public List<PembeliDTO> findAllData()
     {
         return PembeliMapping.instance.toListDto(repository.findAll());
 
     }
+    @Transactional
     @Override
     public PembeliDTO update(PembeliDTO param, Long id) {
         Pembeli data = repository.findById(id).orElse(null);
