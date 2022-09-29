@@ -21,7 +21,7 @@ public class Pembayaran {
 
     private Date tglBayar;
 
-//    @Column(columnDefinition = "INT(11)")
+    @Column(columnDefinition = "INT(11)")
     private Integer totalBayar;
 
     @ManyToOne

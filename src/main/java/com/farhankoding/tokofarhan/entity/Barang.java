@@ -33,5 +33,4 @@ public class Barang {
     @JoinColumn(name = "id_supplier")
     private Supplier supplier;
 
-
 }

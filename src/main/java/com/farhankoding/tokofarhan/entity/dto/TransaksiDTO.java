@@ -16,8 +16,10 @@ public class TransaksiDTO {
     private String keterangan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private BarangDTO barang;
+    private PembeliDTO pembeli;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private PembeliDTO pembeli;
+    private BarangDTO barang;
+
+
 }

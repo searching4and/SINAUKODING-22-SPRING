@@ -18,16 +18,16 @@ public class Pembeli {
     @Column(columnDefinition = "BIGINT(11)")
     private Long id;
 
-//    @Column(columnDefinition = "VARCHAR(30)")
+    @Column(columnDefinition = "VARCHAR(30)")
     private String namaPembeli;
 
-//    @Column(columnDefinition = "VARCHAR(1)")
+    @Column(columnDefinition = "VARCHAR(1)")
     private String jenisKelamin;
 
-//    @Column(columnDefinition = "VARCHAR(14)")
+    @Column(columnDefinition = "VARCHAR(14)")
     private String noTelp;
 
-//    @Column(columnDefinition = "VARCHAR(50)")
+    @Column(columnDefinition = "VARCHAR(50)")
     private String alamat;
 
     @OneToMany(mappedBy = "pembeli")

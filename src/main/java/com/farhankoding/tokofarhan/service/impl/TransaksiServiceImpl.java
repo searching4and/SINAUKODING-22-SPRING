@@ -19,6 +19,7 @@ import com.farhankoding.tokofarhan.service.TransaksiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -33,16 +34,17 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Autowired
     private PembeliRepository pembeliRepository;
 
+    @Transactional
     @Override
     public TransaksiDTO save(TransaksiDTO param) {
-        Barang barang = BarangMapping.instance.toEntity(param.getBarang());
+        Pembeli pembeli = PembeliMapping.instance.toEntity(param.getPembeli());
 
         Transaksi data = TransaksiMapping.instance.toEntity(param);
 
-        if (param.getBarang() != null) {
-            barang = barangRepository.save(barang);
+        if (param.getPembeli() != null) {
+            pembeli = pembeliRepository.save(pembeli);
 
-            data.getBarang().setId(barang.getId());
+            data.getPembeli().setId(pembeli.getId());
         }
 
         data = repository.save(data);

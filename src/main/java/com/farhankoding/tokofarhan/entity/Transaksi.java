@@ -25,12 +25,11 @@ public class Transaksi {
     private String keterangan;
 
     @ManyToOne
-    @JoinColumn(name = "id_barang")
-    private Barang barang;
-
-    @ManyToOne
     @JoinColumn(name = "id_pembeli")
     private Pembeli pembeli;
+    @ManyToOne
+    @JoinColumn(name = "id_barang")
+    private Barang barang;
 
     @OneToMany(mappedBy = "transaksi")
     private List<Pembayaran> pembayaranList;
