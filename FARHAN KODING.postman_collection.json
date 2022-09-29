@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_barang\":\"Soju\",\r\n    \"harga\":50000,\r\n    \"stok\":40\r\n}",
+							"raw": "{\r\n    \"namaBarang\":\"Bola\",\r\n    \"harga\":50000,\r\n    \"stok\":40,\r\n    \"supplier\":{\r\n        \"id\":1,\r\n        \"namaSupplier\": \"PT. Indofood\",\r\n        \"noTelp\": \"02114061490\",\r\n        \"alamat\": \"Jakarta Pusat\"\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,7 +65,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_barang\" :\"Barang Putih\",\r\n    \"harga\" : 54000 ,\r\n    \"stok\" : \"10\" \r\n}",
+							"raw": "{\r\n    \"namaBarang\":\"Bola Plastik\"\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,7 +73,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/barang/update/1",
+							"raw": "http://localhost:8080/barang/update/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -82,7 +82,7 @@
 							"path": [
 								"barang",
 								"update",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -94,7 +94,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/barang/find-by-id/1",
+							"raw": "http://localhost:8080/barang/find-by-id/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -103,7 +103,7 @@
 							"path": [
 								"barang",
 								"find-by-id",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -142,7 +142,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_supplier\":\"Farhan Farras\",\r\n    \"no_telp\":\"02114061490\",\r\n    \"alamat\":\"Jl.Poncol 3\"\r\n}",
+							"raw": "{\r\n    \"namaSupplier\":\"PT. Steam\",\r\n    \"noTelp\":\"02114061490\",\r\n    \"alamat\":\"Jakarta Pusat\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -191,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_supplier\":\"Farhan Farras\",\r\n    \"no_telp\":\"02114061490\",\r\n    \"alamat\":\"Jl.Poncol 3\"\r\n}",
+							"raw": "{\r\n    \"namaSupplier\":\"Farhan Farras\",\r\n    \"noTelp\":\"02114061490\",\r\n    \"alamat\":\"Jl.Poncol 3\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -268,7 +268,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_pembeli\":\"Mustika\",\r\n    \"jenis_kelamin\":\"Wanita\",\r\n    \"no_telp\":\"082165491254\",\r\n    \"alamat_pembeli\":\"Jl. Raya\"\r\n}",
+							"raw": "{\r\n    \"namaPembeli\":\"Mustika\",\r\n    \"jenisKelamin\":\"P\",\r\n    \"noTelp\":\"082165491254\",\r\n    \"alamat\":\"Jl. Raya Bogor\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -317,7 +317,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nama_barang\" :\"Barang Putih\",\r\n    \"harga\" : 54000 ,\r\n    \"stok\" : \"10\" \r\n}",
+							"raw": "{\r\n    \"namaPembeli\":\"Mustika\",\r\n    \"jenisKelamin\":\"p\",\r\n    \"noTelp\":\"082165491254\",\r\n    \"alamat\":\"Jl. Raya Bogor\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -367,7 +367,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/pembeli/delete/1",
+							"raw": "http://localhost:8080/pembeli/delete/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -376,7 +376,259 @@
 							"path": [
 								"pembeli",
 								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pembayaran",
+			"item": [
+				{
+					"name": "Create Pembayaran Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tglBayar\":\"1999-03-03\",\r\n    \"totalBayar\":\"70000\",\r\n    \"transaksi\":{\r\n        \"id\":1,\r\n        \"tanggal\":\"1999-03-13\",\r\n        \"keterangan\":\"Lunas\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pembayaran/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pembayaran",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Pembayaran",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pembayaran/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pembayaran",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Pembayaran",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tglBayar\":\"1999-03-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pembayaran/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pembayaran",
+								"update",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Pembayaran By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pembayaran/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pembayaran",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Pembayaran",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pembayaran/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pembayaran",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaksi",
+			"item": [
+				{
+					"name": "Create Transaksi Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal\":\"1999-03-13\",\r\n    \"keterangan\":\"Lunas\",\r\n    \"pembeli\":{\r\n        \"id\":1,\r\n        \"namaPembeli\":\"Mustika\",\r\n        \"jenisKelamin\":\"p\",\r\n        \"noTelp\":\"082114061490\",\r\n        \"alamat\":\"Jl. Raya Bogor\"\r\n    },\r\n    \"barang\":{\r\n        \"id\": 4,\r\n        \"namaBarang\": \"Baju Merah\",\r\n        \"harga\": 50000.0,\r\n        \"stok\": 40\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaksi/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaksi",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select All Data Transaksi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transaksi/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaksi",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Transaksi",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal\":\"1999-03-15\",\r\n    \"keterangan\":\"Lunas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaksi/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaksi",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Transaksi By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transaksi/find-by-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaksi",
+								"find-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Transaksi",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/transaksi/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"transaksi",
+								"delete",
+								"3"
 							]
 						}
 					},
