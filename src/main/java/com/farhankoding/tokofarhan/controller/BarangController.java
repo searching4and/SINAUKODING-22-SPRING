@@ -21,7 +21,7 @@ public class BarangController {
     @GetMapping("/find-all")
     public Response findAllData(){
         List<BarangDTO> data = service.findAllData();
-        return new Response(data, "Get All Data Pembayaran", data.size(), HttpStatus.OK);
+        return new Response(data, "Get All Data Barang", data.size(), HttpStatus.OK);
     }
 
     @PostMapping("/create")

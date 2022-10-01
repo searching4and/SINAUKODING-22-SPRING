@@ -1,11 +1,15 @@
 package com.farhankoding.tokofarhan.controller;
 
+import com.farhankoding.tokofarhan.common.Response;
+import com.farhankoding.tokofarhan.entity.dto.BarangDTO;
 import com.farhankoding.tokofarhan.entity.dto.PembeliDTO;
 import com.farhankoding.tokofarhan.service.impl.PembeliServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/pembeli")
@@ -14,8 +18,9 @@ public class PembeliController {
     private PembeliServiceImpl service;
 
     @GetMapping("/find-all")
-    public ResponseEntity<?> findAllData(){
-        return new ResponseEntity<>(service.findAllData(), HttpStatus.OK);
+    public Response findAllData(){
+        List<PembeliDTO> data = service.findAllData();
+        return new Response(data, "Get All Data Pembeli", data.size(), HttpStatus.OK);
     }
 
     @PostMapping("/create")
@@ -36,19 +41,16 @@ public class PembeliController {
         }
     }
     @GetMapping("/find-by-id/{id}")
-    public ResponseEntity<?>findById(@PathVariable Long id){
-        return  new ResponseEntity<>(service.findById(id), HttpStatus.OK);
+    public Response findById(@PathVariable Long id){
+        return new Response(service.findById(id), "Berhasil Mengabil Data dari id " + id, HttpStatus.OK);
     }
 
-    @DeleteMapping("delete/{id}")
-    public ResponseEntity<?>deleteData(@PathVariable Long id){
+    @DeleteMapping("/delete/{id}")
+    public Response deleteData(@PathVariable Long id){
         if (service.delete(id)){
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        else
-        {
-            return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+            return new Response("Data Berhasil di Hapus",HttpStatus.OK);
+        }else{
+            return new Response("Data Gagal di Hapus",HttpStatus.BAD_REQUEST);
         }
     }
-
 }

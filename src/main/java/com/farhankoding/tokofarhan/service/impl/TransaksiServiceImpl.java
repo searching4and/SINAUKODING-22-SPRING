@@ -1,20 +1,13 @@
 package com.farhankoding.tokofarhan.service.impl;
 
-import com.farhankoding.tokofarhan.entity.Barang;
 import com.farhankoding.tokofarhan.entity.Pembeli;
-import com.farhankoding.tokofarhan.entity.Supplier;
 import com.farhankoding.tokofarhan.entity.Transaksi;
-import com.farhankoding.tokofarhan.entity.dto.BarangDTO;
 import com.farhankoding.tokofarhan.entity.dto.TransaksiDTO;
-import com.farhankoding.tokofarhan.entity.mapping.BarangMapping;
 import com.farhankoding.tokofarhan.entity.mapping.PembeliMapping;
-import com.farhankoding.tokofarhan.entity.mapping.SupplierMapping;
 import com.farhankoding.tokofarhan.entity.mapping.TransaksiMapping;
 import com.farhankoding.tokofarhan.repository.BarangRepository;
 import com.farhankoding.tokofarhan.repository.PembeliRepository;
-import com.farhankoding.tokofarhan.repository.SupplierRepository;
 import com.farhankoding.tokofarhan.repository.TransaksiRepository;
-import com.farhankoding.tokofarhan.service.BarangService;
 import com.farhankoding.tokofarhan.service.TransaksiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
