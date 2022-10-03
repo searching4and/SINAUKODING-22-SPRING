@@ -32,7 +32,6 @@ public class PembeliServiceImpl implements PembeliService {
     public List<PembeliDTO> findAllData()
     {
         return PembeliMapping.instance.toListDto(repository.findAll());
-
     }
     @Transactional
     @Override
@@ -41,9 +40,9 @@ public class PembeliServiceImpl implements PembeliService {
 
         if (data != null){
             data.setNamaPembeli(param.getNamaPembeli()== null ? data.getNamaPembeli() : param.getNamaPembeli());
-            data.setJenisKelamin(param.getJenisKelamin()== null ? data.getJenisKelamin() : param.getJenisKelamin());
-            data.setNoTelp(param.getNoTelp()== null ? data.getNoTelp() : param.getNoTelp());
-            data.setAlamat(param.getAlamat()== null ? data.getAlamat() : param.getAlamat());
+            data.setJenisKelamin(param.getJenisKelamin() != null ? param.getJenisKelamin() : data.getJenisKelamin());
+            data.setNoTelp(param.getNoTelp() != null ? param.getNoTelp() : data.getNoTelp());
+            data.setAlamat(param.getAlamat() != null ? param.getAlamat() : data.getAlamat());
 
             return  PembeliMapping.instance.toDto(repository.save(data));
         }

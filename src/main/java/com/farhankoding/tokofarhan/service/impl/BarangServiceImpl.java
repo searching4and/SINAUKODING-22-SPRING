@@ -30,11 +30,14 @@ public class BarangServiceImpl implements BarangService {
 
         Barang data = BarangMapping.instance.toEntity(param);
 
-        if (param.getSupplier() != null) {
-            supplier = supplierRepository.save(supplier);
-
-            data.getSupplier().setId(supplier.getId());
+        if (param.getSupplier().getId() == null) {
+            return null;
         }
+//        if (param.getSupplier() != null) {
+//            supplier = supplierRepository.save(supplier);
+//
+//            data.getSupplier().setId(supplier.getId());
+//        }
 
         data = repository.save(data);
 
@@ -53,11 +56,9 @@ public class BarangServiceImpl implements BarangService {
         Barang data = repository.findById(id).orElse(null);
 
         if (data != null){
-            data.setNamaBarang(param.getNamaBarang()== null ? data.getNamaBarang() : param.getNamaBarang());
-            data.setHarga(param.getHarga()== null ? data.getHarga() : param.getHarga());
-            data.setStok(param.getStok()== null ? data.getStok() : param.getStok());
-
-
+            data.setNamaBarang(param.getNamaBarang() == null ? data.getNamaBarang() : param.getNamaBarang());
+            data.setHarga(param.getHarga() != null ? param.getHarga() : data.getHarga());
+            data.setStok(param.getStok() != null ? param.getStok() : data.getStok());
 
             return  BarangMapping.instance.toDto(repository.save(data));
         }

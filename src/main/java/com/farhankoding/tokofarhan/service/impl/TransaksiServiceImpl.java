@@ -59,9 +59,7 @@ public class TransaksiServiceImpl implements TransaksiService {
 
         if (data != null){
             data.setTanggal(param.getTanggal()== null ? data.getTanggal() : param.getTanggal());
-            data.setKeterangan(param.getKeterangan()== null ? data.getKeterangan() : param.getKeterangan());
-
-
+            data.setKeterangan(param.getKeterangan() != null ? param.getKeterangan() : data.getKeterangan());
 
             return  TransaksiMapping.instance.toDto(repository.save(data));
         }

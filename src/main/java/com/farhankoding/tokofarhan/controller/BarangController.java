@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/barang")
 public class BarangController {
-
     @Autowired
     private BarangServiceImpl service;
 
@@ -25,9 +24,13 @@ public class BarangController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> saveData(@RequestBody BarangDTO param){
-        return new ResponseEntity<>(service.save(param), HttpStatus.OK);
+    public Response saveData(@RequestBody BarangDTO param){
+        if (service.save(param) == null){
+            return new Response("Data Pembeli tidak ditemukan", HttpStatus.BAD_REQUEST);
+        }
+        return new Response(service.save(param), "Data Berhasil di tambahkan", HttpStatus.OK);
     }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateData(@PathVariable Long id,
                                         @RequestBody BarangDTO param){

@@ -59,7 +59,7 @@ public class PembayaranServiceImpl implements PembayaranService {
 
         if (data != null){
             data.setTglBayar(param.getTglBayar()== null ? data.getTglBayar() : param.getTglBayar());
-            data.setTotalBayar(param.getTotalBayar()== null ? data.getTotalBayar() : param.getTotalBayar());
+            data.setTotalBayar(param.getTotalBayar() != null ? param.getTotalBayar() : data.getTotalBayar());
 
             return  PembarayanMapping.instance.toDto(repository.save(data));
         }
