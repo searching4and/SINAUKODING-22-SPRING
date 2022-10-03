@@ -1,10 +1,7 @@
 package com.farhankoding.tokofarhan.controller;
 
 import com.farhankoding.tokofarhan.common.Response;
-import com.farhankoding.tokofarhan.entity.dto.BarangDTO;
-import com.farhankoding.tokofarhan.entity.dto.PembayaranDTO;
 import com.farhankoding.tokofarhan.entity.dto.TransaksiDTO;
-import com.farhankoding.tokofarhan.service.impl.BarangServiceImpl;
 import com.farhankoding.tokofarhan.service.impl.TransaksiServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

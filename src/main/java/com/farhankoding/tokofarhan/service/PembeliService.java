@@ -1,7 +1,5 @@
 package com.farhankoding.tokofarhan.service;
 
-import com.farhankoding.tokofarhan.entity.Pembeli;
-import com.farhankoding.tokofarhan.entity.dto.BarangDTO;
 import com.farhankoding.tokofarhan.entity.dto.PembeliDTO;
 
 import java.util.List;

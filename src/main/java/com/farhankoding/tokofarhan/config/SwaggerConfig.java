@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .securitySchemes(Collections.singletonList(securityScheme()))
                 .securityContexts(Collections.singletonList(securityContext()))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sinaukoding.tokosinau"))
+                .apis(RequestHandlerSelectors.basePackage("com.farhankoding.tokofarhan"))
                 .build()
                 .apiInfo(apiInfo());
     }

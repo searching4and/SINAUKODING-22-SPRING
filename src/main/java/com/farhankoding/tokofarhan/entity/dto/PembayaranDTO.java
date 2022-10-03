@@ -1,6 +1,5 @@
 package com.farhankoding.tokofarhan.entity.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;

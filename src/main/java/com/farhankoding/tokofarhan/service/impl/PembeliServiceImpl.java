@@ -1,11 +1,8 @@
 package com.farhankoding.tokofarhan.service.impl;
 
 import com.farhankoding.tokofarhan.entity.Pembeli;
-import com.farhankoding.tokofarhan.entity.Supplier;
 import com.farhankoding.tokofarhan.entity.dto.PembeliDTO;
-import com.farhankoding.tokofarhan.entity.dto.SupplierDTO;
 import com.farhankoding.tokofarhan.entity.mapping.PembeliMapping;
-import com.farhankoding.tokofarhan.entity.mapping.SupplierMapping;
 import com.farhankoding.tokofarhan.repository.PembeliRepository;
 import com.farhankoding.tokofarhan.service.PembeliService;
 import org.springframework.beans.factory.annotation.Autowired;

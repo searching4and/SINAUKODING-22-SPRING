@@ -1,6 +1,5 @@
 package com.farhankoding.tokofarhan.service;
 
-import com.farhankoding.tokofarhan.entity.Supplier;
 import com.farhankoding.tokofarhan.entity.dto.SupplierDTO;
 
 import java.util.List;

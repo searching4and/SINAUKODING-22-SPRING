@@ -1,7 +1,6 @@
 package com.farhankoding.tokofarhan.controller;
 
 import com.farhankoding.tokofarhan.common.Response;
-import com.farhankoding.tokofarhan.entity.Barang;
 import com.farhankoding.tokofarhan.entity.dto.BarangDTO;
 import com.farhankoding.tokofarhan.service.impl.BarangServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
